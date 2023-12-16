@@ -1,6 +1,6 @@
 const ROUTES = [
     {
-        url: '/free',
+        url: '/customers',
         auth: false,
         creditCheck: false,
         rateLimit: {
@@ -8,11 +8,11 @@ const ROUTES = [
             max: 5,
         },
         proxy: {
-            target: 'https://www.google.com',
+            target: 'http://localhost:16011',
             changeOrigin: true,
-            pathRewrite: {
-                [`^/free`]: '',
-            },
+            // pathRewrite: {
+            //     [`^/free`]: '',
+            // },
         },
     },
     {
