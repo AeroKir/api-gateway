@@ -3,10 +3,10 @@ const ROUTES = [
         url: '/customers',
         auth: false,
         creditCheck: false,
-        rateLimit: {
-            windowMs: 15 * 60 * 1000,
-            max: 5,
-        },
+        // rateLimit: {
+        //     windowMs: 15 * 60 * 1000,
+        //     max: 5,
+        // },
         proxy: {
             target: 'http://localhost:16011',
             changeOrigin: true,
@@ -21,6 +21,18 @@ const ROUTES = [
         creditCheck: true,
         proxy: {
             target: 'http://localhost:16010',
+            changeOrigin: true,
+            // pathRewrite: {
+            //     [`^/repairers/`]: '',
+            // },
+        },
+    },
+    {
+        url: '/location-api',
+        auth: false,
+        creditCheck: false,
+        proxy: {
+            target: 'http://localhost:16012',
             changeOrigin: true,
             // pathRewrite: {
             //     [`^/repairers/`]: '',
